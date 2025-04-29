@@ -6,15 +6,21 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		093FBBB42DBBA5C100C1FB54 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 093FBBB32DBBA5C100C1FB54 /* SnapKit */; };
+		093FBBB72DBBA5E100C1FB54 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 093FBBB62DBBA5E100C1FB54 /* Alamofire */; };
+		093FBBBA2DBBA63E00C1FB54 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 093FBBB92DBBA63E00C1FB54 /* SDWebImage */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		093FBB972DBBA41200C1FB54 /* ExploreTheCity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExploreTheCity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		093FBBA92DBBA41300C1FB54 /* Exceptions for "ExploreTheCity" folder in "ExploreTheCity" target */ = {
+		0984DB712DBBA72100EB6B1E /* Exceptions for "ExploreTheCity" folder in "ExploreTheCity" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Info.plist,
+				Resources/Info.plist,
 			);
 			target = 093FBB962DBBA41200C1FB54 /* ExploreTheCity */;
 		};
@@ -24,7 +30,7 @@
 		093FBB992DBBA41200C1FB54 /* ExploreTheCity */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				093FBBA92DBBA41300C1FB54 /* Exceptions for "ExploreTheCity" folder in "ExploreTheCity" target */,
+				0984DB712DBBA72100EB6B1E /* Exceptions for "ExploreTheCity" folder in "ExploreTheCity" target */,
 			);
 			path = ExploreTheCity;
 			sourceTree = "<group>";
@@ -36,6 +42,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				093FBBBA2DBBA63E00C1FB54 /* SDWebImage in Frameworks */,
+				093FBBB42DBBA5C100C1FB54 /* SnapKit in Frameworks */,
+				093FBBB72DBBA5E100C1FB54 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +77,7 @@
 				093FBB932DBBA41200C1FB54 /* Sources */,
 				093FBB942DBBA41200C1FB54 /* Frameworks */,
 				093FBB952DBBA41200C1FB54 /* Resources */,
+				09E6FF152DBBB0CC0085AEA4 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -78,6 +88,9 @@
 			);
 			name = ExploreTheCity;
 			packageProductDependencies = (
+				093FBBB32DBBA5C100C1FB54 /* SnapKit */,
+				093FBBB62DBBA5E100C1FB54 /* Alamofire */,
+				093FBBB92DBBA63E00C1FB54 /* SDWebImage */,
 			);
 			productName = ExploreTheCity;
 			productReference = 093FBB972DBBA41200C1FB54 /* ExploreTheCity.app */;
@@ -107,6 +120,11 @@
 			);
 			mainGroup = 093FBB8E2DBBA41200C1FB54;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				093FBBB22DBBA5C100C1FB54 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				093FBBB52DBBA5E100C1FB54 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				093FBBB82DBBA63E00C1FB54 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 093FBB982DBBA41200C1FB54 /* Products */;
 			projectDirPath = "";
@@ -126,6 +144,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		09E6FF152DBBB0CC0085AEA4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [[ \"$(uname -m)\" == arm64 ]]\nthen\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif command -v swiftlint >/dev/null 2>&1\nthen\n    swiftlint\nelse\n    echo \"warning: `swiftlint` command not found - See https://github.com/realm/SwiftLint#installation for installation instructions.\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		093FBB932DBBA41200C1FB54 /* Sources */ = {
@@ -147,12 +186,15 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = D459R6RZK9;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ExploreTheCity/Info.plist;
+				INFOPLIST_FILE = ExploreTheCity/Resources/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Konum İzni";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -175,12 +217,15 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = D459R6RZK9;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ExploreTheCity/Info.plist;
+				INFOPLIST_FILE = ExploreTheCity/Resources/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Konum İzni";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -232,7 +277,7 @@
 				DEVELOPMENT_TEAM = D459R6RZK9;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -247,6 +292,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -296,7 +342,7 @@
 				DEVELOPMENT_TEAM = D459R6RZK9;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -305,6 +351,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -337,6 +384,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		093FBBB22DBBA5C100C1FB54 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+		093FBBB52DBBA5E100C1FB54 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.2;
+			};
+		};
+		093FBBB82DBBA63E00C1FB54 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.21.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		093FBBB32DBBA5C100C1FB54 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 093FBBB22DBBA5C100C1FB54 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		093FBBB62DBBA5E100C1FB54 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 093FBBB52DBBA5E100C1FB54 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		093FBBB92DBBA63E00C1FB54 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 093FBBB82DBBA63E00C1FB54 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 093FBB8F2DBBA41200C1FB54 /* Project object */;
 }
